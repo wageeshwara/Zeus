@@ -1,0 +1,32 @@
+﻿            <div class="container" ng-controller="LoginController">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter your username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom" ng-controller="LoginController">
+                            <!--<form role="form" action="" method="post" class="login-form">-->
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Username</label>
+                                    <input type="text" ng-model="username" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only"  for="form-password">Password</label>
+                                    <input type="password" ng-model="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                </div>
+                                <button ng-click="login()" class="btn">Sign in!</button>
+                                <p>You have selected: {{LoginResult}}</p>
+                                <p>This is the text : {{lowerCasepass()}}</p>
+                            <!--</form>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+

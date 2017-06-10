@@ -1,0 +1,25 @@
+{
+  "name": "zeus",
+  "version": "1.0.0",
+  "description": "Zeus",
+  "main": "server.js",
+
+   "scripts": {
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.6.4",
+    "bootstrap": "^3.3.7",
+      "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0"
+  }
+
+
+}
