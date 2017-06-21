@@ -30,7 +30,11 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="app\models\todo.js" />
+    <Compile Include="app\models\user.js" />
+    <Compile Include="app\routes.js" />
+    <Compile Include="config\database.js" />
+    <Compile Include="views\index.js" />
     <Compile Include="js\jquery-1.11.1.js" />
     <Compile Include="js\jquery-1.11.1.min.js" />
     <Compile Include="js\jquery.backstretch.js" />
@@ -50,7 +54,7 @@
     <Compile Include="views\loginController.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="index.html" />
+    <Content Include="views\index.html" />
     <Content Include="views\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="views\assets\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="views\assets\bootstrap\css\bootstrap-theme.min.css" />
@@ -108,7 +112,10 @@
     <Content Include="views\login.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\models\" />
     <Folder Include="js\" />
+    <Folder Include="config\" />
+    <Folder Include="app\" />
     <Folder Include="typings\globals\bootstrap\" />
     <Folder Include="typings\globals\jquery\" />
     <Folder Include="typings\globals\mongoose\" />
