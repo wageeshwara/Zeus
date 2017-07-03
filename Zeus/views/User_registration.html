@@ -1,0 +1,45 @@
+﻿<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href=#!/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Register Page</li>
+        </ol>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+<div class="register">
+    <div class="container">
+        <h2>Register Here</h2>
+        <div class="login-form-grids" ng-controller="UserController">
+            <h5>profile information</h5>
+            <form >
+                <input type="text" placeholder="First Name..." required=" " ng-model="user.firstname">
+                <input type="text" placeholder="Last Name..." required=" " ng-model="user.secondname">
+            </form>
+            <div class="register-check-box">
+                <div class="check">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" ng-model="user.newsletter"><i> </i>Subscribe to Newsletter</label>
+                </div>
+            </div>
+            <h6>Login information</h6>
+            <form >
+                <input type="email" placeholder="Email Address" required=" " ng-model="user.email">
+                <input type="password" placeholder="Password" required=" " ng-model="user.password">
+                <input type="password" placeholder="Password Confirmation" required=" " ng-model="user.password1">
+                <div class="register-check-box">
+                    <div class="check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox" ng-model="user.termsCondition"><i> </i>I accept the terms and conditions</label>
+                    </div>
+                </div>
+                <button class="btn btn-default" ng-click="register()">Register</button>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="register-home">
+            <a href="!#/">Home</a>
+        </div>
+    </div>
+</div>
+<!-- //register -->

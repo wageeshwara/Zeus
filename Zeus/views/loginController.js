@@ -4,33 +4,60 @@
 
     angular
         .module('app')
-        .controller('LoginController', function ($scope,$log,$filter,$http) {
-            console.log($log);
+        .controller('LoginController', function ($scope, $log, $filter, $http, $location, $localStorage) {
+            //console.log($log);
             //$log.log("This is log");
             //$log.info("This is information");
             //$log.warn("Wanrinig");
            // $log.debug("Debug inforamtion");
             //$log.error("This is error");
-            //$scope.LoginResult = 'None';
-
+            $scope.loginFail = false;
             $scope.login = function () {
-                //$scope.LoginResult = "This works"
-                //$scope.createTodo = function () {
-                $http.post('/api/todos', $scope.username)
+                $http.post('/api/authenticate', $scope.username)
                     .then(function successCallback(data) {
                         $scope.username = {}; // clear the form so our user is ready to enter another
-                        $scope.todos = data;
-                        $log.debug(data);
-
+                        $localStorage.token = data.data.token;
+                        if (data.data.success) {
+                            //$log.info(data);
+                            $location.path('/');
+                        } else {
+                            $scope.loginFail = true;
+                            $scope.description = data.data.message;
+                        }
                     }, function errorCallback(data) {
                         $log.error('Error: ' + data); 
                     });
-                        //.error(function (data) {
-                          //  console.log('Error: ' + data);
-                        //});
             };
 
-            $scope.password = '';
+            function urlBase64Decode(str) {
+                var output = str.replace('-', '+').replace('_', '/');
+                switch (output.length % 4) {
+                    case 0:
+                        break;
+                    case 2:
+                        output += '==';
+                        break;
+                    case 3:
+                        output += '=';
+                        break;
+                    default:
+                        throw 'Illegal base64url string!';
+                }
+                return window.atob(output);
+            }
+
+            function getUserFromToken() {
+                var token = $localStorage.token;
+                var user = {};
+                if (typeof token !== 'undefined') {
+                    var encoded = token.split('.')[1];
+                    user = JSON.parse(urlBase64Decode(encoded));
+
+                }
+                return user;
+            }
+
+            
 
             $scope.lowerCasepass = function () {
                 return $filter('uppercase')($scope.password);
