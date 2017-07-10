@@ -1,5 +1,8 @@
 ﻿var Todo = require('./models/todo');
 var User = require('./models/user');
+var Product = require('./models/product');
+var Order = require('./models/oder');
+var OrderProduct = require('./models/oderProduct')
 
 module.exports = function (app,jwt) {
 
@@ -44,20 +47,64 @@ module.exports = function (app,jwt) {
     app.post('/api/create_user', function (req, res) {
 
         User.create({
-            username: req.body.username,
+            firstname: req.body.firstname,
+            secondname: req.body.secondname,
+            email: req.body.email,
             password: req.body.password,
-            address: req.body.address,
+            newsletter: req.body.newsletter,
+            termsCondition: req.body.termsCondition,
             hospitlename: req.body.hospitlename
         }, function (err, create_user) {
             if (err)
-                res.send(err);
+                res.json({
+                    success: false,
+                    message: err
+                });
+            else {
+                res.json({
+                    success: true,
+                    message: "Success"
+                })
+            }
+        });
+    });
 
-            // get and return all the todos after you create another
-            User.find(function (err, create_user) {
-                if (err)
-                    res.send(err)
-                res.json(create_user);
-            });
+    //Add product api
+    app.post('/api/addProduct', function (req, res) {
+
+        Product.create({
+            id: 4,
+            name: 'Product four',
+            price: 300,
+            image: '',
+            quantity: 12
+            
+        }, function (err, addProduct) {
+            if (err)
+                res.json({
+                    success: false,
+                    message: err,
+                    addProduct
+                });
+            else {
+                res.json({
+                    success: true,
+                    message: "Success"
+                })
+            }
+        });
+    });
+
+    app.get('/api/addProduct', function (req, res) {
+
+        // use mongoose to get all todos in the database
+        Product.find(function (err, addProduct) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(addProduct); // return all todos in JSON format
         });
     });
 
@@ -65,6 +112,19 @@ module.exports = function (app,jwt) {
 
         // use mongoose to get all todos in the database
         User.find(function (err, create_user) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(create_user); // return all todos in JSON format
+        });
+    });
+
+    app.get('/api/orderproduct', function (req, res) {
+
+        // use mongoose to get all todos in the database
+        OrderProduct.find(function (err, create_user) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
@@ -93,7 +153,7 @@ module.exports = function (app,jwt) {
 
     app.post('/api/authenticate', function (req, res) {
         User.findOne({
-            username : req.body.username
+            email: req.body.email
         }, function (err, user) {
             if (err) throw err;
             if (!user) {
@@ -114,6 +174,51 @@ module.exports = function (app,jwt) {
                 }
             }
             });
+    });
+
+    app.post('/api/order', function (req, res) {
+        var dat = req.body;
+        console.log(dat);
+        var oderId;
+        var now = Date.now()
+        var user = dat[0];
+
+        console.log(user._doc.email);
+        Order.create({
+            date: now,
+            userid: 1,
+            username: user._doc.email
+        }, function (err, oder) {
+            if (!err) {
+                oderId = oder._id;
+                console.log(oder._id);
+                console.log(oderId);
+            }
+        });
+        var data = dat[1];
+        console.log(oderId);
+        for (i = 0; i < data.length; ++i) {
+            console.log("SECOND");
+        console.log(oderId);
+            OrderProduct.create({
+                oderId: oderId,
+                productId: data[i].id,
+                productName: data[i].name,
+                Quantity: data[i].count
+            }, function (err, oder) {
+                if (err) {
+                    res.json({
+                        success: false,
+                        message: err,
+                        addProduct
+                    });
+                }
+            });
+        }
+        res.json({
+            success:true,
+            message: 'success',
+        });
     });
 
     // application -------------------------------------------------------------

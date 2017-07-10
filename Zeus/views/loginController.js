@@ -57,10 +57,5 @@
                 return user;
             }
 
-            
-
-            $scope.lowerCasepass = function () {
-                return $filter('uppercase')($scope.password);
-            };
         });
 })();

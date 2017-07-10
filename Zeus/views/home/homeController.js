@@ -6,6 +6,10 @@
         .module('app')
         .controller('HomeController', function ($scope, $log, $filter, $http, $localStorage) {
 
+
+
+            $scope.rowLen = 3
+            $scope.maxProduct = 6
             $scope.username = getUserFromToken()._doc.username;
             $log.info(getUserFromToken()._doc.username);
           
@@ -36,6 +40,14 @@
                 }
                 return user;
             }
-            
+
+            $http.get('/api/addProduct')
+                .then(function successCallback(data) {
+                    //$log.info(data.data);
+                    $scope.products = data.data;
+                    //$log.info($scope.products);
+                }, function errorCallback(data) {
+                    $log.error('Error: ' + data);
+                });
         });
 })();

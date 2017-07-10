@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="assets/js/move-top.js"></script>
+    <!--<script type="text/javascript" src="assets/js/move-top.js"></script>-->
     <script type="text/javascript" src="assets/js/easing.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -52,12 +52,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </ul>
             </div>
-            <div class="product_list_header">
-                <form action="#" method="post" class="last">
+            <div class="product_list_header" ng-controller="CartController">
+               <!-- <form action="/#!cart"  class="last">-->
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="display" value="1">
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </form>
+                    <button class="w3view-cart"  data-toggle="modal" data-target="#myModal" name="submit" value="" ng-click="cartRepopulate()"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                <!--</form>-->
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <nav class="navbar navbar-default">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header nav_2">
-                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs" >
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -76,10 +76,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html" class="act">Home</a></li>
+                    <ul class="nav navbar-nav ">
+                        <li class="active"><a href="!#/" class="act">Home</a></li>
                         <!-- Mega Menu -->
-                        <li class="dropdown">
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groceries<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-3">
                                 <div class="row">
@@ -175,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                 </div>
                             </ul>
-                        </li>
+                        </li>-->
                         <li><a href="gourmet.html">Gourmet</a></li>
                         <li><a href="offers.html">Offers</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -195,9 +195,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>Contact</h3>
 
                     <ul class="address">
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>ESOFT, <span>Colombo.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@esoft.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>011 567 567</li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
@@ -236,12 +236,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="footer-copy">
 
             <div class="container">
-                <p>© 2017 Super Market. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                <p>© 2017 ZEUS. All rights reserved | Design by RAW</a></p>
             </div>
         </div>
 
     </div>
-    <div class="footer-botm">
+    <!--<div class="footer-botm">
         <div class="container">
             <div class="w3layouts-foot">
                 <ul>
@@ -256,20 +256,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"> </div>
         </div>
-    </div>
+    </div>-->
 
     <!--<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>-->
     <script src="/node_modules/angular/angular.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>-->
 
-    <!--<script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>-->
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
 
-    <script src="/node_modules/angular/angular-route.min.js"></script>
-    <script src="/node_modules/angular/angular-cookies.min.js"></script>
+    <!--<script src="/node_modules/angular/angular-route.min.js"></script>
+    <script src="/node_modules/angular/angular-cookies.min.js"></script>-->
 
     <!--<script src="../js/jquery-1.11.1.min.js"></script>-->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-1.11.1.js"></script>-->
     <!--<script src="assets/bootstrap/js/bootstrap.min.js"></script>-->
     <!--<script src="assets/js/jquery.backstretch.min.js"></script>
     <script src="assets/js/scripts.js"></script>-->
@@ -278,7 +278,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!-- top-header and slider -->
     <!-- here stars scrolling icon -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function () {
             /*
 				var defaults = {
@@ -292,9 +292,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $().UItoTop({ easingType: 'easeOutQuart' });
 
         });
-    </script>
+    </script>-->
     <!-- //here ends scrolling icon -->
-    <script src="assets/js/minicart.min.js"></script>
+    <!--<script src="assets/js/minicart.min.js"></script>
     <script>
         // Mini Cart
         paypal.minicart.render({
@@ -304,7 +304,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         if (~window.location.search.indexOf('reset=true')) {
             paypal.minicart.reset();
         }
-    </script>
+    </script>-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" ng-controller="CartController">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Your shopping cart contains: <span>{{cart.length}} Products</span></h4>
+                </div>
+                <div class="modal-body" >
+                    <div class="checkout-right">
+                        <table class="timetable_sub">
+                            <thead>
+                                <tr>
+                                    <th>SL No.</th>
+                                    <th>Product</th>
+                                    <th>Quality</th>
+                                    <th>Product Name</th>
+
+                                    <th>Price</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+
+                            <tr class="rem1" ng-repeat="prod in cart">
+                                <td class="invert">
+                                    {{
+                    $index+1
+                                    }}
+                                </td>
+                                <td class="invert-image"><a href="single.html"><img src="assets/images/1.png" alt=" " class="img-responsive" /></a></td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus">&nbsp;</div>
+                                            <div class="entry value"><span>{{prod.count}}</span></div>
+                                            <div class="entry value-plus active">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">{{prod.name}}</td>
+
+                                <td class="invert">LKR {{prod.price}}</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div ng-click="removeItemCart(prod)" class="close1"> </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <!--quantity-->
+                            <script>
+									$('.value-plus').on('click', function(){
+										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+										divUpd.text(newVal);
+									});
+
+									$('.value-minus').on('click', function(){
+										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+										if(newVal>=1) divUpd.text(newVal);
+									});
+                            </script>
+                            <!--quantity-->
+                        </table>
+                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+    </div>
     <!-- main slider-banner -->
     <script src="assets/js/skdslider.min.js"></script>
     <link href="assets/css/skdslider.css" rel="stylesheet">
@@ -333,6 +406,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="home/homeController.js"></script>
     <script src="loginController.js"></script>
     <script src="user_Controller.js"></script>
+    <script src="cart/cartController.js"></script>
+    <script src="product/productController.js"></script>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>
 
     <!--<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/register/register.controller.js"></script>-->
 </body>
