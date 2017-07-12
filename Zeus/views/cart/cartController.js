@@ -8,7 +8,7 @@
         $scope.cart = [];
         $scope.total = 0;
         var productsData;
-        $log.info($scope.cart);
+        //$log.info($scope.cart);
         /*
           if ($cookieStore.get('cart') !== null) {
                       $scope.cart =  $cookieStore.get('cart');
@@ -30,7 +30,7 @@
         //Sepetimiz daha önceden tanımlıysa onu çekelim
         if (!angular.isUndefined($cookies.get('cart'))) {
             $scope.cart = $cookies.getObject('cart');
-            $log.info($scope.cart);
+            //$log.info($scope.cart);
         }
 
         $scope.addItemToCart = function (product) {
@@ -102,12 +102,12 @@
         $scope.cartRepopulate = function () {
             if (!angular.isUndefined($cookies.get('total'))) {
                 $scope.total = parseFloat($cookies.get('total'));
-                $log.info($scope.total);
+                //$log.info($scope.total);
             }
             //Sepetimiz daha önceden tanımlıysa onu çekelim
             if (!angular.isUndefined($cookies.get('cart'))) {
                 $scope.cart = $cookies.getObject('cart');
-                $log.info($scope.cart);
+              //  $log.info($scope.cart);
             }
         };
 

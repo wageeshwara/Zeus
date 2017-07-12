@@ -73,6 +73,7 @@
     <Compile Include="views\js\responsiveslides.min.js" />
     <Compile Include="views\js\skdslider.min.js" />
     <Compile Include="views\loginController.js" />
+    <Compile Include="views\logInfo\loginfoController.js" />
     <Compile Include="views\product\productController.js" />
     <Compile Include="views\user_Controller.js" />
     <Content Include="package.json" />
@@ -244,6 +245,7 @@
     <Content Include="views\assets\ico\favicon.png" />
     <Content Include="views\assets\img\backgrounds\1%403.jpg" />
     <Content Include="views\login.html" />
+    <Content Include="views\logInfo\logInfo.html" />
     <Content Include="views\product\productView.html" />
     <Content Include="views\User_registration.html" />
   </ItemGroup>
@@ -286,6 +288,7 @@
     <Folder Include="views\home\js\" />
     <Folder Include="views\cart\" />
     <Folder Include="views\js\" />
+    <Folder Include="views\logInfo\" />
     <Folder Include="views\product\" />
   </ItemGroup>
   <ItemGroup>

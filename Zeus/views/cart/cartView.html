@@ -9,35 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>
     <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
     <div ng-controller="CartController">
-    <div class="container">
 
-        <h1>STORE</h1>
-        <ul class="list-group text-center">
-            <li class="col-xs-6 col-md-3 col-sm-3 col-lg-3 list-group-item" ng-repeat="product in products">
-                <figure>
-                    <img width="100" height="100" src="https://lh3.googleusercontent.com/-M_NiblLM-0A/Vh9eSY5LIeI/AAAAAAAAB_I/VBeV8X1V2HM/s144-Ic42/mac.jpg" />
-                    <figcaption>
-                        {{product.name}}
-                        <h3>{{product.price | currency}}</h3>
-                    </figcaption>
-                </figure>
-                <input class="btn btn-success" type="button" ng-click="addItemToCart(product)" value="BUY" />
-            </li>
-        </ul>
-        <div ng-show="cart.length !== 0">
-            <h1>CART-SHOW</h1>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="c in cart">
-                    <h4>
-                        {{c.name}} |                <span style="color:blue"> {{c.count}} </span>
-                        | {{c.price*c.count | currency}}
-                    </h4>
-                    <input class="btn btn-danger" type="button" ng-click="removeItemCart(c)" value="Remove" />
-                </li>
-            </ul>
-            Total : {{total | currency}}
-        </div>
-    </div>
     <div class="checkout">
     <div class="container">
 
@@ -109,9 +81,7 @@
                 </ul>
             </div>
             <div class="checkout-right-basket">
-                <button class="glyphicon glyphicon-menu-left" ng-click="order()" >order</button>
-                <button class="btn btn-success" ng-click="cartRepopulate()">repop</button>
-                <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+                <a><span class="glyphicon glyphicon-menu-left" ng-click="order()" aria-hidden="true"></span>Check Out</a>
             </div>
             <div class="clearfix"> </div>
         </div>

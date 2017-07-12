@@ -1,0 +1,22 @@
+﻿<div class="agile-login" ng-controller="LoginInfoController">
+    <ul>
+        <li><a href="/#!register" ng-hide="username"> Create Account </a></li>
+        <li><a href="/#!login" ng-hide="username">Login</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" ng-show="username">{{username}}<b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                    <div class="multi-gd-img">
+                        <ul class="multi-column-dropdown">
+                            <h6>Account</h6>
+                            <li><a ng-click="logout()">logout</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </ul>
+        </li>
+        <li><a href="contact.html">Help</a></li>
+
+    </ul>
+</div>

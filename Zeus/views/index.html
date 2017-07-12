@@ -44,20 +44,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="w3l_offers">
                 <p><a href="/">ZEUS</a></p>
             </div>
-            <div class="agile-login">
+            <!--<div class="agile-login">
                 <ul>
                     <li><a href="/#!register"> Create Account </a></li>
                     <li><a href="/#!login">Login</a></li>
+                     <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" ng-show="username">{{username}}<b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column columns-3">
+                                <div class="row">
+                                    <div class="multi-gd-img">
+                                        <ul class="multi-column-dropdown">
+                                            <h6>User information</h6>
+                                            <li><a href="groceries.html">Dals & Pulses</a></li>
+                                            <li><a href="groceries.html">Almonds</a></li>
+                                            <li><a href="groceries.html">Cashews</a></li>
+                                            <li><a href="groceries.html">Dry Fruit</a></li>
+                                            <li><a href="groceries.html"> Mukhwas </a></li>
+                                            <li><a href="groceries.html">Rice & Rice Products</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </ul>
+                        </li>
                     <li><a href="contact.html">Help</a></li>
 
                 </ul>
-            </div>
+            </div>-->
+            <div ng-include="'logInfo/logInfo.html'"></div>
             <div class="product_list_header" ng-controller="CartController">
-               <!-- <form action="/#!cart"  class="last">-->
+                <form  class="last">
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="display" value="1">
                     <button class="w3view-cart"  data-toggle="modal" data-target="#myModal" name="submit" value="" ng-click="cartRepopulate()"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                <!--</form>-->
+                </form>
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -176,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </ul>
                         </li>-->
-                        <li><a href="gourmet.html">Gourmet</a></li>
+                        <li><a href="!#!/product">Product</a></li>
                         <li><a href="offers.html">Offers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -372,6 +392,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                         </div>
                         <div class="modal-footer">
+                            <button type="button" class="btn btn-success" ><a href="!#!/cart">Move to cart</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -408,6 +429,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="user_Controller.js"></script>
     <script src="cart/cartController.js"></script>
     <script src="product/productController.js"></script>
+    <script src="logInfo/loginfoController.js"></script>
  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.min.js" data-require="angularjs@1.4" data-semver="1.4.4"></script>

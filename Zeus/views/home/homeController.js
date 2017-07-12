@@ -10,8 +10,8 @@
 
             $scope.rowLen = 3
             $scope.maxProduct = 6
-            $scope.username = getUserFromToken()._doc.username;
-            $log.info(getUserFromToken()._doc.username);
+            //$scope.username = getUserFromToken()._doc.username;
+            //$log.info(getUserFromToken()._doc.username);
           
             function urlBase64Decode(str) {
                 var output = str.replace('-', '+').replace('_', '/');
