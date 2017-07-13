@@ -6,7 +6,7 @@
         .module('app')
         .controller('LoginInfoController', function ($scope, $log, $filter, $http, $location, $localStorage) {
 
-            if ( $localStorage.token != undefined) {
+            if ( $localStorage.token != undefined || $localStorage.token != null) {
                 $scope.username = getUserFromToken()._doc.firstname;
             }
             //$log.info(getUserFromToken()._doc.firstname);

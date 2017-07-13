@@ -73,11 +73,11 @@ module.exports = function (app,jwt) {
     app.post('/api/addProduct', function (req, res) {
 
         Product.create({
-            id: 4,
-            name: 'Product four',
-            price: 300,
+            id: req.body.productId,
+            name: req.body.name,
+            price: req.body.price,
             image: '',
-            quantity: 12
+            quantity: req.body.quantity,
             
         }, function (err, addProduct) {
             if (err)

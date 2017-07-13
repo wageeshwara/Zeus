@@ -41,6 +41,13 @@
                 controllerAs: 'vm'
             })
 
+            .when('/admin', {
+                controller: 'AddProductController',
+                templateUrl: 'admin/addProductView.html',
+                controllerAs: 'vm'
+            })
+
+
             .otherwise({ redirectTo: '/login' });
 
         $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function ($q, $location, $localStorage) {

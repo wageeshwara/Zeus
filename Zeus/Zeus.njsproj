@@ -37,6 +37,7 @@
     <Compile Include="app\models\user.js" />
     <Compile Include="app\routes.js" />
     <Compile Include="config\database.js" />
+    <Compile Include="views\admin\addProductController.js" />
     <Compile Include="views\assets\cart\ngCart.directives.js" />
     <Compile Include="views\assets\cart\ngCart.fulfilment.js" />
     <Compile Include="views\assets\cart\ngCart.js" />
@@ -78,6 +79,8 @@
     <Compile Include="views\user_Controller.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="views\admin\addProductView.html" />
+    <Content Include="views\admin\oderView.html" />
     <Content Include="views\assets\css\bootstrap.css" />
     <Content Include="views\assets\css\font-awesome.css" />
     <Content Include="views\assets\css\skdslider.css" />
@@ -289,6 +292,7 @@
     <Folder Include="views\cart\" />
     <Folder Include="views\js\" />
     <Folder Include="views\logInfo\" />
+    <Folder Include="views\admin\" />
     <Folder Include="views\product\" />
   </ItemGroup>
   <ItemGroup>
