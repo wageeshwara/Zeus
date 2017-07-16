@@ -47,6 +47,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/oders', {
+                controller: 'OderController',
+                templateUrl: 'admin/oderView.html',
+                controllerAs: 'vm'
+            })
+
 
             .otherwise({ redirectTo: '/login' });
 

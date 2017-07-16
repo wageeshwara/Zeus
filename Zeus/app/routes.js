@@ -97,14 +97,27 @@ module.exports = function (app,jwt) {
 
     app.get('/api/addProduct', function (req, res) {
 
-        // use mongoose to get all todos in the database
+        // use mongoose to get all addProdcut in the database
         Product.find(function (err, addProduct) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
                 res.send(err)
 
-            res.json(addProduct); // return all todos in JSON format
+            res.json(addProduct); // return all addProduct in JSON format
+        });
+    });
+
+    app.get('/api/oder', function (req, res) {
+
+        // use mongoose to get all orders in the database
+        Order.find(function (err, orders) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(orders); // return all orders in JSON format
         });
     });
 

@@ -38,6 +38,7 @@
     <Compile Include="app\routes.js" />
     <Compile Include="config\database.js" />
     <Compile Include="views\admin\addProductController.js" />
+    <Compile Include="views\admin\oderController.js" />
     <Compile Include="views\assets\cart\ngCart.directives.js" />
     <Compile Include="views\assets\cart\ngCart.fulfilment.js" />
     <Compile Include="views\assets\cart\ngCart.js" />
